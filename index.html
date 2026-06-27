@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鱷魚的眼淚 Tears of overwhelming emotion 溢れ出る感動の涙</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入 Lucide Icons (圖標庫) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 隱藏滾動條但保持滾動功能 (可選，讓畫面更乾淨) */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-teal-200 selection:text-teal-900 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-6">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <!-- Logo & Brand Name -->
+            <div onclick="scrollToSection('home')" class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-500 cursor-pointer flex items-center gap-3">
+                <!-- 將 border-teal-100 改為 border-transparent，並使用 bg-gradient-to-r 產生彩虹邊框效果 (利用 p-[2px] 技巧) -->
+                <div class="rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500 p-[2px]">
+                    <img src="./img/LOGO.jpg" alt="Logo" class="w-10 h-10 object-contain rounded-full bg-white border border-white">
+                </div>
+                <img src="./img/title.png" alt="鱷魚的眼淚" class="h-8 w-auto object-contain">
+            </div>
+            
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <!-- 將原本寫死的文字顏色 text-slate-200 或 text-slate-600 移除，改由 js 控制的 'nav-link' class -->
+                <button onclick="scrollToSection('home')" class="nav-link lang-nav-home text-sm font-medium tracking-widest text-white hover:text-teal-400 transition-colors duration-300 drop-shadow-md">首頁</button>
+                <button onclick="scrollToSection('purpose')" class="nav-link lang-nav-purpose text-sm font-medium tracking-widest text-white hover:text-teal-400 transition-colors duration-300 drop-shadow-md">宗旨意義</button>
+                <button onclick="scrollToSection('events')" class="nav-link lang-nav-events text-sm font-medium tracking-widest text-white hover:text-teal-400 transition-colors duration-300 drop-shadow-md">活動佈告</button>
+                <button onclick="scrollToSection('products')" class="nav-link lang-nav-products text-sm font-medium tracking-widest text-white hover:text-teal-400 transition-colors duration-300 drop-shadow-md">商品內容</button>
+                <button onclick="scrollToSection('contact')" class="nav-link lang-nav-contact text-sm font-medium tracking-widest text-white hover:text-teal-400 transition-colors duration-300 drop-shadow-md">合作聯繫</button>
+                
+                <!-- Desktop Language Switcher -->
+                <div class="relative group">
+                    <button class="nav-link flex items-center gap-1 text-sm font-medium tracking-widest text-white hover:text-teal-400 transition-colors duration-300 py-2 drop-shadow-md">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span id="current-lang-desktop">TW</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right">
+                        <div class="py-2">
+                            <script>
+function changeLanguage(lang) {
+    const pages = {
+        EN: 'index_EN.html',
+        TW: 'index.html',
+        JP: 'index_JP.html'
+    };
+
+    window.location.href = pages[lang];
+}
+</script>
+                            <button onclick="changeLanguage('TW')" class="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition-colors">繁體中文</button>
+                            <button onclick="changeLanguage('EN')" class="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition-colors">English</button>
+                            <button onclick="changeLanguage('JP')" class="block w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-teal-50 hover:text-teal-600 transition-colors">日本語</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-600 hover:text-teal-600 focus:outline-none">
+                <i data-lucide="menu" id="menu-icon" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-slate-100 flex flex-col py-4">
+            <button onclick="scrollToSection('home')" class="lang-nav-home py-4 px-6 text-left tracking-widest text-slate-600 hover:bg-slate-50 hover:text-teal-600 transition-colors">首頁</button>
+            <button onclick="scrollToSection('purpose')" class="lang-nav-purpose py-4 px-6 text-left tracking-widest text-slate-600 hover:bg-slate-50 hover:text-teal-600 transition-colors">宗旨意義</button>
+            <button onclick="scrollToSection('events')" class="lang-nav-events py-4 px-6 text-left tracking-widest text-slate-600 hover:bg-slate-50 hover:text-teal-600 transition-colors">活動佈告</button>
+            <button onclick="scrollToSection('products')" class="lang-nav-products py-4 px-6 text-left tracking-widest text-slate-600 hover:bg-slate-50 hover:text-teal-600 transition-colors">商品內容</button>
+            <button onclick="scrollToSection('contact')" class="lang-nav-contact py-4 px-6 text-left tracking-widest text-slate-600 hover:bg-slate-50 hover:text-teal-600 transition-colors">合作聯繫</button>
+            
+            <!-- Mobile Language Switcher -->
+            <div class="px-6 py-4 border-t border-slate-100 mt-2 bg-slate-50">
+                <p class="text-xs text-slate-400 mb-3 tracking-widest uppercase">Select Language</p>
+                <div class="flex gap-4">
+                    <button onclick="changeLanguage('tw')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">繁中</button>
+                    <button onclick="changeLanguage('en')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">English</button>
+                    <button onclick="changeLanguage('jp')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">日本語</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (首頁) -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Banner Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="./img/banner.png" alt="Crocodile Eye Banner" class="w-full h-full object-cover object-center">
+            <!-- 已移除原本的漸層過渡，保留乾淨的分線 -->
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-start justify-center h-full pt-20">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-widest mb-8 text-white leading-tight drop-shadow-lg">
+                    <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-cyan-300"> </span>
+                </h1>
+                <p class="text-lg md:text-2xl tracking-widest text-slate-200 mb-12 font-medium drop-shadow-md border-l-4 border-teal-400 pl-6">
+                    
+                </p>
+                <!-- 已移除探索真義按鈕 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Purpose Section (宗旨意義) -->
+    <section id="purpose" class="py-24 bg-white relative overflow-hidden">
+        <!-- Floating Ambient Background Deco -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-cyan-100/50 via-teal-50/30 to-transparent rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                
+                <!-- S__118775832.jpg Image Display -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-teal-200 to-cyan-200 rounded-2xl blur-2xl opacity-60"></div>
+                   <img src="./img/pic1.png" alt="Jewel Crocodile Eye Tear" class="relative z-10 w-full h-auto rounded-xl shadow-[0_20px_50px_rgba(13,148,136,0.15)] border border-white">
+                </div>
+
+                <!-- Philosophy Copywriting -->
+                <div class="w-full lg:w-1/2 space-y-8">
+                    <div class="inline-block px-4 py-1 border border-teal-200 bg-teal-50 rounded-full text-teal-700 text-sm font-medium tracking-widest mb-2">
+                        宗旨意義 PURPOSE
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-wider text-slate-800 mb-6 leading-snug">
+                        鱷魚的眼淚<br />
+                        誰能叫鱷魚不流淚？<span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600"></span>
+                    </h2>
+                    
+                    <div class="space-y-6 text-slate-600 text-lg leading-relaxed tracking-wide">
+                        <p>
+                            唯有穿越考驗的人開悟，<br />
+                            淚水不是結束，而是覺醒。
+                        </p>
+                        <p>
+                            唯有走過道的人頓悟，<br />
+                            發現天才、發現天賦才能發現自己。
+                        </p>
+                        <div class="pl-6 border-l-4 border-teal-400 py-3 bg-gradient-to-r from-teal-50 to-transparent rounded-r-lg">
+                            <p class="text-xl text-slate-800 font-semibold tracking-widest">
+                                人生最大的修行<br />
+                                不是改變命運，而是看清自己。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section (活動佈告) -->
+    <section id="events" class="py-24 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-widest text-slate-800 mb-4">活動佈告</h2>
+                <p class="text-slate-500 tracking-widest">與我們一同潛入深水，尋找內在的力量</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>常態活動</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">一日遊</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">時空旅遊・能量之旅</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">透過不同時空景點（淺水灣、石碇），接收不同時空的能量感受與餐點、服務。</p>
+                    <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
+                        了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>限定活動</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">小型聚會</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">塔羅咖啡・深度對談</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">一杯咖啡的時間，與志同道合的靈魂交流，分享在「決道」上的印記。</p>
+                    <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
+                        了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>每月教育</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">線上/線下講座</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">發現天賦・發現天賦</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">看清自己是最大的修行。教練帶領您解析自我天賦，不再為改變命運而掙扎。</p>
+                    <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
+                        了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section (商品內容) -->
+    <section id="products" class="py-24 bg-white relative">
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-50 via-teal-50/20 to-transparent rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-widest text-slate-800 mb-4">商品內容</h2>
+                <p class="text-slate-500 tracking-widest">承載決心與覺醒的實體印記</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Product 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-[4/3] bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-100 shadow-sm flex items-center justify-center">
+                        <img src="./img/CO.jpg" alt="Art" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 text-slate-800 text-xs font-semibold tracking-widest rounded-full shadow-sm backdrop-blur-sm">獨家設計</span>
+                        </div>
+                            </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 tracking-wider group-hover:text-teal-600 transition-colors">精品咖啡</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">如同深水般的醇厚口感，尾韻帶有覺醒的明亮酸值。每一口都是喚醒內在的儀式。</p>
+                </div>
+
+                <!-- Product 2 (S__118775832.jpg) -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-[4/3] bg-slate-100 border border-slate-100 shadow-sm flex items-center justify-center">
+                        <img src="./img/ZZ.jpg" alt="Art" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 text-slate-800 text-xs font-semibold tracking-widest rounded-full shadow-sm backdrop-blur-sm">獨家設計</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 tracking-wider group-hover:text-teal-600 transition-colors">藍海珍珠</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">隱於深水秘境之中，歷經靈魂淬鍊才得以發掘的純粹智慧與稀有價值。</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-6 aspect-[4/3] bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-100 shadow-sm flex items-center justify-center">
+                        <img src="./img/KW.jpg" alt="Art" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:opacity-80 group-hover:scale-105 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10"></div>
+                        <div class="absolute bottom-4 left-4 z-20">
+                            <span class="px-3 py-1 bg-white/90 text-slate-800 text-xs font-semibold tracking-widest rounded-full shadow-sm backdrop-blur-sm">獨家設計</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 tracking-wider group-hover:text-teal-600 transition-colors">開運文創</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">將無形的能量與祝願注入文創設計，化作引導生命順流的隨身印記。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (合作聯繫) -->
+    <section id="contact" class="py-24 bg-gradient-to-b from-teal-50 to-slate-100 relative overflow-hidden">
+        <!-- Abstract Glow BG -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-cyan-200/40 blur-[100px]"></div>
+            <div class="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-teal-300/30 blur-[100px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="bg-white/80 backdrop-blur-xl border border-white shadow-2xl shadow-teal-900/5 rounded-[2rem] p-8 md:p-14">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-teal-50 text-teal-600 mb-6 shadow-sm">
+                        <i data-lucide="coffee" class="w-10 h-10"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-widest text-slate-800 mb-6 leading-relaxed">
+                        邀請您透過一杯咖啡的時間<br />
+                        檢視生命的方向，尋找真正的「決」。
+                    </h2>
+                    <p class="text-slate-500 tracking-wide">無論是合作提案、活動邀約，或是單純想來杯咖啡聊聊您的覺醒之路，我們都誠摯歡迎。</p>
+                </div>
+
+                <form class="space-y-6" onsubmit="event.preventDefault();">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold tracking-widest text-slate-700 mb-2">您的姓名</label>
+                            <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all shadow-sm" placeholder="Name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold tracking-widest text-slate-700 mb-2">聯絡信箱</label>
+                            <input type="email" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all shadow-sm" placeholder="Email">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold tracking-widest text-slate-700 mb-2">訊息內容</label>
+                        <textarea rows="4" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all shadow-sm resize-none" placeholder="想聊聊什麼呢？"></textarea>
+                    </div>
+                    <div class="text-center pt-6">
+                        <button type="button" class="px-10 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-semibold tracking-widest rounded-xl transition-all duration-300 shadow-[0_10px_20px_rgba(13,148,136,0.2)] hover:shadow-[0_15px_30px_rgba(13,148,136,0.3)] hover:-translate-y-1 w-full md:w-auto">
+                            預約咖啡時間 / 送出訊息
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-100 text-center text-slate-500 text-sm tracking-widest relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-3 text-2xl font-bold tracking-widest text-slate-800 mb-6">
+                <!-- 套用與頂部導覽列相同的彩虹邊框設計 -->
+                <div class="rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500 p-[2px]">
+                    <img src="./img/LOGO.jpg" alt="Logo" class="w-8 h-8 object-contain rounded-full bg-white border border-white">
+                </div>
+                                <img src="./img/title.png" alt="鱷魚的眼淚" class="h-6 w-auto object-contain">
+            </div>
+            <p class="mb-4 font-medium text-slate-600">人生最大的修行，不是改變命運，而是看清自己。</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+                <a href="#" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <p>&copy; 2026 鱷魚的眼淚. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic (純 JS 驅動滾動與選單控制) -->
+    <script>
+        // 初始化 Lucide 圖標
+        lucide.createIcons();
+
+        // 平滑滾動至指定區域
+        function scrollToSection(id) {
+            // 關閉手機版選單
+            document.getElementById('mobile-menu').classList.add('hidden');
+            const element = document.getElementById(id);
+            if (element) {
+                const offset = 80; // 導覽列高度
+                const bodyRect = document.body.getBoundingClientRect().top;
+                const elementRect = element.getBoundingClientRect().top;
+                const elementPosition = elementRect - bodyRect;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // 切換手機版選單開關
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isHidden = menu.classList.contains('hidden');
+            
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons(); // 重新渲染更換後的 icon
+        }
+
+        // 偵測滾動：為導覽列添加毛玻璃與背景效果，並切換文字顏色
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.querySelectorAll('.nav-link'); // 抓取所有導覽列連結
+            
+            if (window.scrollY > 50) {
+                // 滾動後：白底毛玻璃，字體變深色(slate-600)，hover變teal-600
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navbar.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white', 'hover:text-teal-400', 'drop-shadow-md');
+                    link.classList.add('text-slate-600', 'hover:text-teal-600');
+                });
+            } else {
+                // 頂部：透明背景，字體變白色(white)，hover變teal-400
+                navbar.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+                navbar.classList.add('bg-transparent', 'py-6');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-slate-600', 'hover:text-teal-600');
+                    link.classList.add('text-white', 'hover:text-teal-400', 'drop-shadow-md');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
