@@ -142,8 +142,13 @@
     <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <!-- Background Banner Image -->
         <div class="absolute inset-0 z-0">
-            <img src="./img/banner.png" alt="Crocodile Eye Banner" class="w-full h-full object-cover object-center">
-            <!-- 已移除原本的漸層過渡，保留乾淨的分線 -->
+<picture class="block w-full h-full">
+
+    <source media="(max-width: 1023px)" srcset="./img/banner_m.png">
+
+    <img src="./img/banner.png" alt="Crocodile Eye Banner" class="w-full h-full object-cover object-center">
+
+</picture>            <!-- 已移除原本的漸層過渡，保留乾淨的分線 -->
         </div>
 
         <!-- Content -->
