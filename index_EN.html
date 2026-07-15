@@ -41,7 +41,7 @@
             <div onclick="scrollToSection('home')" class="text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-500 cursor-pointer flex items-center gap-3">
                 <!-- 將 border-teal-100 改為 border-transparent，並使用 bg-gradient-to-r 產生彩虹邊框效果 (利用 p-[2px] 技巧) -->
                 <div class="rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500 p-[2px]">
-                    <img src="./img/LOGO.jpg" alt="Logo" class="w-10 h-10 object-contain rounded-full bg-white border border-white">
+                    <img src="./img/LOGO.png" alt="Logo" class="w-10 h-10 object-contain rounded-full bg-white border border-white">
                 </div>
                 <img src="./img/title.png" alt="Tears of overwhelming emotion" class="h-8 w-auto object-contain">
             </div>
@@ -155,26 +155,30 @@ function changeLanguage(lang) {
                 <!-- Philosophy Copywriting -->
                 <div class="w-full lg:w-1/2 space-y-8">
                     <div class="inline-block px-4 py-1 border border-teal-200 bg-teal-50 rounded-full text-teal-700 text-sm font-medium tracking-widest mb-2">
-                        Purpose PURPOSE
+                        Core Purpose PURPOSE
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold tracking-wider text-slate-800 mb-6 leading-snug">
-                        Tears of overwhelming emotion,
-                        Who can keep the crocodile from shedding tears?<span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600"></span>
+                        Tears of overwhelming emotion<br />
+                        Who can keep a crocodile from shedding tears?<span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600"></span>
                     </h2>
                     
                     <div class="space-y-6 text-slate-600 text-lg leading-relaxed tracking-wide">
                         <p>
-                            Only those who pass through trials awaken,<br />
-                            tears are not an ending, but an awakening.
+                            Everyone is born pure, yet as we grow, we gradually accumulate a variety of different life experiences.<br />
+                            We say that "Crocodile's Tears" are actually a journey to reclaim our true selves. This very first tear inevitably comes from the <strong>tears of parents</strong>—the starting point of nurturing life and selfless devotion. Growing up, we stumble in love and shed the <strong>tears of lovers</strong>; on the path of chasing dreams, we taste the <strong>tears of success and failure</strong>; navigating through valleys and peaks, we learn to shed <strong>tears of gratitude</strong>. Ultimately, when we truly see ourselves clearly, through the accumulation of countless stages, we finally leave behind the <strong>tears shed for all humanity</strong>.
                         </p>
                         <p>
-                            Only those who have walked the path come to realize,<br />
-                            that discovering genius and discovering innate gifts is how we discover ourselves.
+                            Only those who pass through trials attain enlightenment,<br />
+                            tears are not an end, but an awakening.
+                        </p>
+                        <p>
+                            Only those who have walked the path find realization,<br />
+                            discovering your genius and innate gifts is the only way to discover yourself.
                         </p>
                         <div class="pl-6 border-l-4 border-teal-400 py-3 bg-gradient-to-r from-teal-50 to-transparent rounded-r-lg">
                             <p class="text-xl text-slate-800 font-semibold tracking-widest">
                                 The greatest practice in life<br />
-                                is not changing fate, but seeing oneself clearly.
+                                is not changing your fate, but seeing yourself clearly.
                             </p>
                         </div>
                     </div>
@@ -189,51 +193,112 @@ function changeLanguage(lang) {
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold tracking-widest text-slate-800 mb-4">Events</h2>
-                <p class="text-slate-500 tracking-widest">Dive into deep waters with us and find the strength within.</p>
+                <p class="text-slate-500 tracking-widest">Dive into deep waters with us and experience the true essence and meaning of these various tears across different activities.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
+                <!-- Card 1: 父母的眼淚 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
                     <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
                         <span>Ongoing Event</span>
-                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">One-Day Trip</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">One-Day Tour</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">Time-Space Travel · Energy Journey</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">Through destinations across different times and spaces, such as Repulse Bay and Shiding, experience the energy, meals, and service of each dimension.</p>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">Tears of Parents</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">A Journey Through Time and Space</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">Life's first tear stems from the selfless nurturing and expectations of our parents. Through the specialty meals and magnetic energy of Repulse Bay, we reach across time and space to embrace our roots and rediscover the purity of body, mind, and soul.</p>
                     <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
                         Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </button>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2: 感動感恩的眼淚 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
                     <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
                         <span>Limited Event</span>
-                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">Small Gathering</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">Salon Gathering</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">Tarot Coffee · In-Depth Conversation</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">Over a cup of coffee, connect with like-minded souls and share the marks left along the path of resolve.</p>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">Tears of Gratitude</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">Tarot & Coffee Time</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">A cup of pour-over coffee paired with the gentle guidance of Tarot allows us to pause our rushed lives and truly thank ourselves. No grand lectures here—just sharing warm moments with like-minded souls.</p>
                     <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
                         Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </button>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3: 情侶的眼淚 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
                     <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
-                        <span>Monthly Learning</span>
-                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">Online / Offline Lecture</span>
+                        <span>Exclusive Project</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">Romance Experience</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">Discover Your Gifts · Discover Your Talent</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">Seeing yourself clearly is the greatest practice. Our coaches guide you in understanding your gifts so you no longer struggle to change fate.</p>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">Tears of Lovers</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">Singles Mixer Series</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">Are the tears shed in love born of pure affection or confusion? What is the difference between true love and blind love? This course gently guides you to untangle the threads of emotion, let go of attachments, and reclaim your true self and the original warmth of love.</p>
                     <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
                         Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </button>
                 </div>
+
+                <!-- Card 4: 成功失敗的眼淚 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>Monthly Education</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">Talent Lecture</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">Tears of Success and Failure</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">Journey of Genius and Talent</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">The greatest practice in life is seeing oneself clearly, no longer lost in tears of achievement or setback. By deeply analyzing your innate genius and gifts, we help you plan ahead and transform all past experiences into firm stepping stones for your future self.</p>
+                    <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Card 5: 為天下人而滴 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>Members Exclusive</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">Assessment Lecture</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">Tears for Humanity</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">Destiny & Life Chart Reading</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">Where does life come from? Where do we go after death? How do the soul and body differ? Once you see yourself clearly, personal stability, family harmony, and career prosperity gradually expand into selfless devotion for all. Explore the truth, and walk toward authenticity.</p>
+                    <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Card 6: 女神的眼淚 (籌備中・特別高光處理) -->
+                <div class="bg-gradient-to-br from-white to-emerald-50/50 p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-xl hover:border-emerald-300 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-emerald-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <span>Special Project</span>
+                        <span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs ml-2 font-bold">Coming Soon</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="block text-emerald-600 text-sm font-bold tracking-widest mb-1">Tears of the Goddess</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Coffee Goddess Series</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">Please stay tuned for more detailed information.</p>
+                    <button class="mt-6 text-sm font-semibold text-emerald-600 flex items-center hover:text-emerald-800 transition-colors">
+                        Learn More <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -259,7 +324,7 @@ function changeLanguage(lang) {
                         </div>
                             </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2 tracking-wider group-hover:text-teal-600 transition-colors">Specialty Coffee</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">A rich taste like deep water, with a bright, awakening acidity in the finish. Every sip is a ritual that awakens the self within.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">A rich, full-bodied taste like deep waters, finishing with a bright, awakening acidity. Every sip is a ritual to awaken the self within.</p>
                 </div>
 
                 <!-- Product 2 (S__118775832.jpg) -->
@@ -272,7 +337,7 @@ function changeLanguage(lang) {
                         </div>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2 tracking-wider group-hover:text-teal-600 transition-colors">Blue Ocean Pearl</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Hidden within a deep-water sanctuary, it reveals pure wisdom and rare value only after the soul has been refined.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Hidden within a deep-water sanctuary, revealing its pure wisdom and rare value only after the soul has been refined.</p>
                 </div>
 
                 <!-- Product 3 -->
@@ -285,7 +350,7 @@ function changeLanguage(lang) {
                         </div>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-2 tracking-wider group-hover:text-teal-600 transition-colors">Creative Fortune Goods</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Infusing invisible energy and blessings into creative designs, transforming them into personal marks that guide life into flow.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Infusing formless energy and blessings into creative designs, transforming them into personal marks that guide your life's flow.</p>
                 </div>
             </div>
         </div>
@@ -306,10 +371,10 @@ function changeLanguage(lang) {
                         <i data-lucide="coffee" class="w-10 h-10"></i>
                     </div>
                     <h2 class="text-2xl md:text-3xl font-bold tracking-widest text-slate-800 mb-6 leading-relaxed">
-                        We invite you to take the time for a cup of coffee,
-                        to reflect on the direction of life and find true “resolve.”
+                        We invite you to take the time for a cup of coffee,<br />
+                        to reflect on life's direction and find true "resolve."
                     </h2>
-                    <p class="text-slate-500 tracking-wide">Whether you have a collaboration proposal, an event invitation, or simply want to share a coffee and talk about your path of awakening, we warmly welcome you.</p>
+                    <p class="text-slate-500 tracking-wide">Whether it's a collaboration proposal, an event invitation, or simply a desire to share a coffee and discuss your path of awakening, we warmly welcome you.</p>
                 </div>
 
                 <form class="space-y-6" onsubmit="event.preventDefault();">
@@ -319,7 +384,7 @@ function changeLanguage(lang) {
                             <input type="text" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all shadow-sm" placeholder="Name">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold tracking-widest text-slate-700 mb-2">Email</label>
+                            <label class="block text-sm font-semibold tracking-widest text-slate-700 mb-2">Email Address</label>
                             <input type="email" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-slate-800 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition-all shadow-sm" placeholder="Email">
                         </div>
                     </div>
@@ -343,17 +408,19 @@ function changeLanguage(lang) {
             <div class="flex items-center justify-center gap-3 text-2xl font-bold tracking-widest text-slate-800 mb-6">
                 <!-- 套用與頂部導覽列相同的彩虹邊框設計 -->
                 <div class="rounded-full bg-gradient-to-r from-red-500 via-yellow-400 via-green-500 via-blue-500 to-purple-500 p-[2px]">
-                    <img src="./img/LOGO.jpg" alt="Logo" class="w-8 h-8 object-contain rounded-full bg-white border border-white">
+                    <img src="./img/LOGO.png" alt="Logo" class="w-8 h-8 object-contain rounded-full bg-white border border-white">
                 </div>
                                 <img src="./img/title.png" alt="Tears of overwhelming emotion" class="h-6 w-auto object-contain">
             </div>
-            <p class="mb-4 font-medium text-slate-600">The greatest practice in life is not changing fate, but seeing oneself clearly.</p>
+            <p class="mb-4 font-medium text-slate-600">The greatest practice in life is not changing your fate, but seeing yourself clearly.</p>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                </a>
-                <a href="#" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors">
-                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <!-- 這裡替換為純 SVG 的 IG 圖標，保證 100% 能夠顯示 -->
+                <a href="https://www.instagram.com/taipei.heaven_/" target="_blank" rel="noopener noreferrer" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
                 </a>
             </div>
             <p>&copy; 2026 Tears of overwhelming emotion. All Rights Reserved.</p>
