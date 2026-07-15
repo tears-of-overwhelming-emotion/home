@@ -102,9 +102,9 @@ function changeLanguage(lang) {
             <div class="px-6 py-4 border-t border-slate-100 mt-2 bg-slate-50">
                 <p class="text-xs text-slate-400 mb-3 tracking-widest uppercase">Select Language</p>
                 <div class="flex gap-4">
-                    <button onclick="changeLanguage('TW')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">繁中</button>
-                    <button onclick="changeLanguage('EN')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">English</button>
-                    <button onclick="changeLanguage('JP')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">日本語</button>
+                    <button onclick="changeLanguage('tw')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">繁中</button>
+                    <button onclick="changeLanguage('en')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">English</button>
+                    <button onclick="changeLanguage('jp')" class="text-sm font-medium text-slate-600 hover:text-teal-600 px-3 py-1 bg-white rounded shadow-sm">日本語</button>
                 </div>
             </div>
         </div>
@@ -164,6 +164,10 @@ function changeLanguage(lang) {
                     
                     <div class="space-y-6 text-slate-600 text-lg leading-relaxed tracking-wide">
                         <p>
+                            每個人生來純粹，卻在成長的過程中，慢慢累積出差異的各種歷練。<br />
+                            我們說，鱷魚的眼淚，其實是一場找回真實自我的旅程。這滴眼淚，最初一定來自<strong>父母的眼淚</strong>——那是孕育生命、無私奉獻的起點。長大後，我們在愛裡跌撞，流下了<strong>情侶的眼淚</strong>；在追求夢想的路上，嚐盡了<strong>成功與失敗的眼淚</strong>；走過低谷與高峰，我們學會了流下<strong>感動感恩的眼淚</strong>。最終，當我們真正看清自己，在無數的階段程序堆疊，終至留下了<strong>為天下人而滴</strong>的眼淚。
+                        </p>
+                        <p>
                             唯有穿越考驗的人開悟，<br />
                             淚水不是結束，而是覺醒。
                         </p>
@@ -189,51 +193,112 @@ function changeLanguage(lang) {
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold tracking-widest text-slate-800 mb-4">活動佈告</h2>
-                <p class="text-slate-500 tracking-widest">與我們一同潛入深水，尋找內在的力量</p>
+                <p class="text-slate-500 tracking-widest">與我們一同潛入深水，在不同的活動中體驗各種眼淚的真諦與真義</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
+                <!-- Card 1: 父母的眼淚 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
                     <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
                         <span>常態活動</span>
-                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">一日遊</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">一日侑・一日遊</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">時空旅遊・能量之旅</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">透過不同時空景點（淺水灣、石碇），接收不同時空的能量感受與餐點、服務。</p>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">父母的眼淚</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">時空之旅</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">生命的第一滴眼淚，源於父母無私的孕育與期盼。透過淺水灣的特色餐點與磁場能量，跨越時空擁抱追溯找回身沁靈的純粹。</p>
                     <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
                         了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </button>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Card 2: 感動感恩的眼淚 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
                     <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
                         <span>限定活動</span>
-                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">小型聚會</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">沙龍聚會</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">塔羅咖啡・深度對談</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">一杯咖啡的時間，與志同道合的靈魂交流，分享在「決道」上的印記。</p>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">感恩的眼淚</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">塔羅咖啡時光</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">一杯手沖咖啡搭配塔羅的溫柔指引，讓我們在匆忙生活中停下腳步，好好感謝自己。這裡不談大道理，只與志同道合的靈魂分享溫暖瞬間。</p>
                     <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
                         了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </button>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Card 3: 情侶的眼淚 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
                     <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
                         <i data-lucide="calendar" class="w-4 h-4"></i>
-                        <span>每月教育</span>
-                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">線上/線下講座</span>
+                        <span>專屬企劃</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">戀愛體驗</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 group-hover:text-teal-600 transition-colors">發現天賦・發現天賦</h3>
-                    <p class="text-slate-600 leading-relaxed text-sm">看清自己是最大的修行。教練帶領您解析自我天賦，不再為改變命運而掙扎。</p>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">情侶的眼淚</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">未婚聯誼系列</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">在愛裡流下的眼淚，有時讓人分不清究竟是純粹，還是迷惘？戀愛亂愛大不同？課程將帶領你梳理情感的脈絡，放下執念，找回情感中最初的溫度與自己。</p>
                     <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
                         了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
                     </button>
                 </div>
+
+                <!-- Card 4: 成功失敗的眼淚 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>每月教育</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">天賦講座</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">成功與失敗的眼淚</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">天才天賦之旅</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">人生最大的修行是看清自己，不再為成就或挫折的眼淚而迷惘。透過深度解析與生俱來的天才與天賦，帶您未雨綢繆、全盤佈局，將過往的種種經驗化作朝向未來自己的堅定。</p>
+                    <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
+                        了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Card 5: 為天下人而滴 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl hover:border-teal-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-teal-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>會員專屬</span>
+                        <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs ml-2">鑑定講座</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="block text-teal-600 text-sm font-bold tracking-widest mb-1">為天下人而滴的眼淚</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-teal-600 transition-colors">命盤・運盤・解盤</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">人生由何來？死又何去？靈魂肉體大不同？當看清自我後，將個人立、家庭和、事業興、社會平等逐漸朝往為天下人而滴的無私。探索真實，走向真實。</p>
+                    <button class="mt-6 text-sm font-semibold text-teal-600 flex items-center hover:text-teal-800 transition-colors">
+                        了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Card 6: 女神的眼淚 (籌備中・特別高光處理) -->
+                <div class="bg-gradient-to-br from-white to-emerald-50/50 p-8 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-xl hover:border-emerald-300 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex items-center space-x-2 text-emerald-600 mb-4 text-sm font-medium tracking-widest">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <span>特別企劃</span>
+                        <span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs ml-2 font-bold">籌備中</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="block text-emerald-600 text-sm font-bold tracking-widest mb-1">女神的眼淚</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">咖啡女神系列</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed text-sm">詳情內容請持續關注</p>
+                    <button class="mt-6 text-sm font-semibold text-emerald-600 flex items-center hover:text-emerald-800 transition-colors">
+                        了解詳情 <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                    </button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -349,11 +414,13 @@ function changeLanguage(lang) {
             </div>
             <p class="mb-4 font-medium text-slate-600">人生最大的修行，不是改變命運，而是看清自己。</p>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                </a>
-                <a href="#" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors">
-                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                <!-- 已替換為 IG 原生 SVG 圖標，保證100%顯示，並精準連結至指定網址 -->
+                <a href="https://www.instagram.com/taipei.heaven_/" target="_blank" rel="noopener noreferrer" class="p-2 bg-slate-50 rounded-full hover:bg-teal-50 hover:text-teal-600 transition-colors flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
                 </a>
             </div>
             <p>&copy; 2026 鱷魚的眼淚. All Rights Reserved.</p>
